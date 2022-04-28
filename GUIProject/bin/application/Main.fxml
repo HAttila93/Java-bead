@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <VBox layoutX="33.0" layoutY="46.0" prefHeight="172.0" prefWidth="100.0" spacing="15.0">
+         <children>
+            <Label prefHeight="26.0" prefWidth="15.0" text="ID">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" text="Name">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="27.0" text="Date of Birth">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="44.0" text="Country">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="61.0" text="Team">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="145.0" layoutY="46.0" prefHeight="172.0" prefWidth="203.0" spacing="12.0">
+         <children>
+            <TextField fx:id="tfID" />
+            <TextField fx:id="tfName" layoutX="10.0" layoutY="10.0" />
+            <TextField fx:id="tfDOB" layoutX="10.0" layoutY="35.0" />
+            <TextField fx:id="tfCountry" layoutX="10.0" layoutY="35.0" />
+            <TextField fx:id="tfTeam" layoutX="10.0" layoutY="60.0" prefWidth="203.0" />
+         </children>
+      </VBox>
+      <TableView fx:id="tableviewOfDrivers" layoutX="83.0" layoutY="251.0" onMouseClicked="#handleMouseAction" prefHeight="309.0" prefWidth="640.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0">
+        <columns>
+          <TableColumn fx:id="columnID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="columnName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="columnDOB" prefWidth="75.0" text="Day of Birth" />
+            <TableColumn fx:id="columnCountry" prefWidth="75.0" text="Country" />
+            <TableColumn fx:id="columnTeam" prefWidth="75.0" text="Team" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="btnNew" layoutX="444.0" layoutY="46.0" mnemonicParsing="false" onAction="#handleButtonAction" text="New Driver" />
+      <Button fx:id="btnUpdate" layoutX="534.0" layoutY="46.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Update Driver" />
+      <Button fx:id="btnDelete" layoutX="649.0" layoutY="46.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Delete Driver" AnchorPane.rightAnchor="80.0" />
+      <Label layoutX="534.0" layoutY="197.0" text="Number of drivers">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfNumOfDrivers" editable="false" layoutX="677.0" layoutY="195.0" prefHeight="25.0" prefWidth="46.0" />
+      <Button fx:id="btnToTracks" layoutX="634.0" layoutY="84.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Tracks" AnchorPane.rightAnchor="80.0" />
+      <Label layoutX="489.0" layoutY="165.0" text="Search">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfSearchDriver" layoutX="571.0" layoutY="163.0" prefHeight="25.0" prefWidth="179.0" promptText="Name" AnchorPane.rightAnchor="80.0" />
+      <Button fx:id="btnClear" layoutX="365.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Clear" />
+   </children>
+</AnchorPane>
